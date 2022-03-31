@@ -55,7 +55,7 @@ func WithDatetime(datetime *time.Time) Option {
 type nilTracer struct{}
 
 func (t *nilTracer) Trace(a ...interface{}) {}
-func (t *nilTracer) GetDate(a ...interface{}) time.Time {return time.Now()}
+func (t *nilTracer) GetDate(a ...interface{}) time.Time {return time.Time{}}
 
 // Off creates a Tracer that will ignore calls to Trace.
 func Off() Tracer {
