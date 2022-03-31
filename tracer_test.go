@@ -26,9 +26,10 @@ func TestNew(t *testing.T) {
 		} else {
 			log.Printf("Datetime is in sync: '%s' vs '%s'.", tm.String(), tracerDate.GetDate().String())
 		}
-		// log.Printf("hier:%s",*tracerDate.tracer.out)
-		// if tracerDate.datetime != tm {
-		// 	t.Errorf("Datetime is not in sync: '%s'.", tm.String())
-		// }
 	}
+}
+
+func TestOff(t *testing.T) {
+	var silentTracer Tracer = Off()
+	silentTracer.Trace("something")
 }
